@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ "$1" == "" ]; then
+
+        echo "usage : ./compile.sh [g++|cmake]"
+        exit 1
+fi
+
 if [ "$1" == "g++" ]; then
  if [ -d build ]; then
     rm build/* -rf
