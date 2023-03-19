@@ -1,5 +1,6 @@
 #!/bin/bash
 
+if [ "$1" == "g++" ]; then
  if [ -d build ]; then
     rm build/* -rf
  else
@@ -32,3 +33,13 @@ echo $buildCommand
 
 exec $buildCommand
 
+fi
+
+
+if [ "$1" == "cmake" ]; then
+
+        cd build
+        cmake .. && cmake --build .
+        cd -
+
+fi
